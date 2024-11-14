@@ -2,16 +2,20 @@ import { Col, Row, Menu } from 'antd';
 import { HomeOutlined, ProductOutlined, ContactsOutlined } from '@ant-design/icons'; 
 import logo from '../assets/Logo.png';
 import InputProductList from './InputProductList';
+import { useNavigate } from 'react-router';
 
 const Navbar = () => {
+
+  const navigate = useNavigate()
+
   return (
     <Row 
       justify="space-between" 
       align="middle" 
       className="p-4 bg-white shadow-md" 
     >
-      <Col>
-        <img src={logo} alt="Logo" className="h-12" />
+      <Col className='cursor-pointer'>
+        <img  onClick={() => navigate('/')} src={logo} alt="Logo" className="h-12" />
       </Col>
       <Col span={12} >
         <InputProductList/>

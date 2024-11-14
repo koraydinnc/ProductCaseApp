@@ -7,13 +7,14 @@ function App() {
   return (
     <Routes>
       {MainRouter.map((route, index) => {
+        const Component = route.component;
         return (
           <Route
             key={index}
             path={route.path}
             element={
               <MainLayout>
-                <route.component />
+                <Component />
               </MainLayout>
             }
           />

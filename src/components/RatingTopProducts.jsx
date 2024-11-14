@@ -1,15 +1,16 @@
-import { Carousel, Card, Row, Col } from 'antd';
+import { Carousel, Card, Row, Col, Spin } from 'antd';
 import { useGetProductsQuery } from '../store/api/apiSlice';
+import { useNavigate } from 'react-router';
 
 const { Meta } = Card;
 
 const RatingTopProducts = () => {
   const { data, isLoading, isError } = useGetProductsQuery({ limit: 200 });
-
+  const navigate = useNavigate()
   const topRatedProducts = data && data.products ? data.products.filter(product => product.rating >= 4.5) : [];
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Spin fullscreen/>;
   }
 
   if (isError) {
@@ -21,6 +22,10 @@ const RatingTopProducts = () => {
     groupedProducts.push(topRatedProducts.slice(i, i + 4));
   }
 
+  const handleNavigate = (id) => {
+         navigate(`/Product/${id}`)
+  } 
+
   return (
     <Carousel arrows infinite={true} dots={true} autoplay>
       {groupedProducts.map((group, index) => (
@@ -29,6 +34,7 @@ const RatingTopProducts = () => {
             {group.map((product) => (
               <Col key={product.id} xs={24} sm={12} md={8} lg={6}>
                 <Card
+                onClick={() => handleNavigate(product.id)}
                   hoverable
                   style={{
                     height:'100%',
@@ -40,7 +46,7 @@ const RatingTopProducts = () => {
                   }}
                   cover={<img alt={product.title} src={product.thumbnail} style={{ height: '200px', objectFit: 'contain' }} />}
                 >
-                  <Meta title={product.title}  />
+                  <Meta  title={product.title} />
                   <div style={{ textAlign: 'center', marginTop: '10px', color: '#084736', fontWeight: 'bold' }}>
                     Rating: {product.rating}
                   </div>

@@ -5,7 +5,10 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com/' }),
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: ({ limit = 10 }) => `products?limit=${limit}`,
+      query: ({ limit = 10, page }) => {
+        const offset = page ? `&skip=${(page - 1) * limit}` : '';
+        return `products?limit=${limit}${offset}`;
+      },
     }),
   }),
 });

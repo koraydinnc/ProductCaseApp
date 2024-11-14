@@ -1,6 +1,6 @@
 import { Col, Row } from 'antd'
 import RatingTopProducts from '../components/RatingTopProducts'
-import CategoryList from '../components/CategoryList'
+import ProductsTable from '../components/ProductsTable'
 
 
 const HomePage = () => {
@@ -9,9 +9,9 @@ const HomePage = () => {
      <Col xs={24} lg={24}>
        <RatingTopProducts />
      </Col> 
-     <Col xs={12} lg={18}>
-      
-      <CategoryList/>
+     
+      <Col xs={24} lg={24}>
+        <ProductsTable/>
       </Col>
     </Row>
   )
