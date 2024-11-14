@@ -26,11 +26,12 @@ Product Case App, kullanıcıların ürünleri listeleyebileceği, ürün detayl
 - Dinamik Ürün Sayfaları: Her ürün için özel bir sayfa yapısı oluşturulmuştur ve ürünlere dair detaylı bilgiler dinamik olarak sunulur.
 -  Redux ve Redux Query ile güçlü bir veri akışı ve durum yönetimi sağlanmaktadır, böylece sayfalar arası geçişlerde veri kaybı yaşanmaz.
 - Duyarlı (Responsive) Tasarım: Tailwind CSS ve Ant Design ile oluşturulan bileşenler sayesinde mobil ve masaüstü uyumlu, duyarlı bir kullanıcı deneyimi sunar.
+- Arama işlemleri için Debounce ile performanslı arama imkanı sunar.
 
   
 ## Ekran Görüntüleri
 
 ![Uygulama Ekran Görüntüsü](https://i.ibb.co/DpBp3Pp/Screenshot-2024-11-14-15-30-38.png)
-![Uygulama Ekran Görüntüsü](https://i.ibb.co/ZWZ6703/Screenshot-2024-11-14-15-44-26.png)
-![Uygulama Ekran Görüntüsü](https://i.ibb.co/SyctKCL/Screenshot-2024-11-14-15-46-24.png)
+![Uygulama Ekran Görüntüsü](https://i.ibb.co/pXz6ky2/Screenshot-2024-11-14-16-05-29.png)
+![Uygulama Ekran Görüntüsü](https://i.ibb.co/19GV9jw/Screenshot-2024-11-14-16-07-26.png)
   
